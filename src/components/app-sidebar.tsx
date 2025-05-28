@@ -38,29 +38,44 @@ const data = {
   ],
   tree: [
     [
-      "app",
+      "mathematics",
+      ["Rational Numbers", []],
+      ["Linear Equations in One Variable", ["examples.md"]],
+      ["Understanding Quadrilaterals", []],
+      ["Practical Geometry", ["activity.docx"]],
+    ],
+    [
+      "science",
+      ["Crop Production and Management", []],
+      ["Microorganisms: Friend and Foe", ["video.mp4"]],
+      ["Materials: Metals and Non-Metals", ["experiment.xlsx"]],
+      ["Synthetic Fibres and Plastics"],
+    ],
+    [
+      "social-science",
+      ["From Trade to Territory", ["map.kml"]],
+      ["Ruling the Countryside", []],
+      ["Tribals, Dikus and the Vision of a Golden Age", ["case-study.pdf"]],
+      ["How, When and Where"],
+    ],
+    [
+      "english",
       [
-        "api",
-        ["hello", ["route.ts"]],
-        "page.tsx",
-        "layout.tsx",
-        ["blog", ["page.tsx"]],
+        "The Best Christmas Present in the World",
+        ["The Tsunami", ["assignment.docx"]],
+        "Glimpses of the Past",
+        ["Bepin Choudhury’s Lapse of Memory", ["analysis.md"]],
       ],
     ],
     [
-      "components",
-      ["ui", "button.tsx", "card.tsx"],
-      "header.tsx",
-      "footer.tsx",
+      "hindi",
+      [
+        "ध्वनि",
+        ["लाख की चूड़ियाँ", ["प्रश्नोत्तर.docx"]],
+        "बस की यात्रा",
+        ["दीवानों की हस्ती", ["कविता.mp3"]],
+      ],
     ],
-    ["lib", ["util.ts"]],
-    ["public", "favicon.ico", "vercel.svg"],
-    ".eslintrc.json",
-    ".gitignore",
-    "next.config.js",
-    "tailwind.config.js",
-    "package.json",
-    "README.md",
   ],
 };
 
@@ -69,7 +84,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar {...props}>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Changes</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-sm font-semibold">
+            Recent conversations
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {data.changes.map((item, index) => (
@@ -85,7 +102,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Files</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-sm font-semibold">
+            Course curriculum
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {data.tree.map((item, index) => (
